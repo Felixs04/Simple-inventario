@@ -2,6 +2,11 @@ import java.util.Scanner;
 
 public class SimpleInventary {
 
+    static String [] articulos = new String [5];
+
+
+
+
     public static String obtenerNombreArticulo() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese el nombre del articulo: ");
@@ -15,12 +20,9 @@ public class SimpleInventary {
     }
 
     public static void agregarArticulo(String articulo) {
-        if (articulo.length() > 4) {
-            System.out.println("Articulo agregado exitosamente!");
-
-        } else {
-            System.out.println("No se permite este articulo");
-        }
+      for (int i = 0; i < articulos.length; i++) {
+          articulos[i] = obtenerNombreArticulo();
+      }
     }
 
     public static void removerArticulo(int id) {
@@ -49,7 +51,10 @@ public class SimpleInventary {
         String usuario = scanner.nextLine();
         System.out.println("Bienvenido " + usuario);
         String articuloexistente = obtenerNombreArticulo();
-        System.out.println("Articulo existente: " + articuloexistente);
+        System.out.println("Articulos resgistrados: ");
+        for (String articulo : articulos) {
+            System.out.println(articulo);
+        }
 
     }
      public static void  modificarArticulo() {
@@ -83,7 +88,8 @@ public class SimpleInventary {
      }
 
     public static void main(String[] args) {
-        obtenerNombreArticulo();
+       modificarArticulo();
+
 
     }
 }
