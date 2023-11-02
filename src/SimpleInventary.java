@@ -19,7 +19,7 @@ public class SimpleInventary {
 
     }
 
-    public static void agregarArticulo(String articulo) {
+    public static void agregarArticulo() {
       for (int i = 0; i < articulos.length; i++) {
           articulos[i] = obtenerNombreArticulo();
       }
@@ -88,7 +88,8 @@ public class SimpleInventary {
      }
 
     public static void main(String[] args) {
-       modificarArticulo();
+        agregarArticulo();
+       imprimirinventario();
 
 
     }
