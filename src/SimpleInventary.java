@@ -52,6 +52,35 @@ public class SimpleInventary {
         System.out.println("Articulo existente: " + articuloexistente);
 
     }
+     public static void  modificarArticulo() {
+         String nombre = obtenerNombreArticulo();
+         double precio = (Math.random() * 5000) + 100;
+         if (nombre.startsWith("A") || nombre.startsWith("D")) {
+
+             if (precio > 150 && precio <= 250) {
+                 precio = precio + (precio * 0.02);
+                 System.out.println(nombre + precio);
+             }
+
+            else if (precio > 250 && precio <= 500) {
+                 precio = precio + (precio * 0.08);
+                 System.out.println(nombre + precio);
+
+             }
+
+            else if
+             (nombre.startsWith("C") || nombre.startsWith("M")) {
+                 precio = precio + (precio * 0.20);
+                 System.out.println(nombre + precio);
+             }
+
+             else {
+                 precio = precio + (precio * 0.12);
+                 System.out.println(nombre + precio);
+             }
+
+         }
+     }
 
     public static void main(String[] args) {
         obtenerNombreArticulo();
